@@ -23,21 +23,51 @@
 </head>
 <body>
     <div id='map'>i</div>
-    <div id='map1'></div>
+    <!--<div id='map1'></div>--> 
     <script>
-        
+      
+      var novaArray = ["São joão", "Mecejana","Centro", "São Bento"];
+      var nova = [ "zona 01", "Zona 02","Zona 03", "Zona 4"];
+
+
+      //var earthquakeMarker = L.marker([1.22350399, -60.38507252]);
+
       var map = L.map(document.getElementById('map'), {
       center: [2.80639743, -60.69037402],
       zoom: 7,
       layers: []
 
+      
       });
-      var map1 = L.map(document.getElementById('map1'), {
+      var marcador = L.marker([1.22350399, -60.38507252]); 
+      marcador.bindPopup("<b> nome do bairro: </b>"+ novaArray[0] + " <br/> <b> tipo: </b>" + nova[0]);
+
+      marcador.addTo(map);
+
+      var m1 = L.marker([1.47440327, -60.88449575]);
+      m1.bindPopup("<b> nome do bairro: </b>"+ novaArray[1] + " <br/> <b> tipo: </b>" + nova[1]);
+      m1.addTo(map);
+
+      var m2 = L.marker([1.71470000, -60.86780000]);
+      m2.bindPopup("<b> nome do bairro: </b>"+ novaArray[2] + " <br/> <b> tipo: </b>" + nova[2]);
+      m2.addTo(map);
+
+      var m3 = L.marker([3.53990000, -59.88920000]);
+      m3.bindPopup("<b> nome do bairro: </b>"+ novaArray[3] + " <br/> <b> tipo: </b>" + nova[3]);
+      m3.addTo(map);
+
+
+
+
+
+
+
+      /*var map1 = L.map(document.getElementById('map1'), {
       center: [2.80639743, -60.69037402],
       zoom: 7,
       layers: []
 
-      });
+      });*/
 
       var basemap = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
           });
