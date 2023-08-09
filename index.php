@@ -18,7 +18,11 @@
           width: 700px;
           border: solid 1px black;
       }
+      
 </style>
+<script src="./layers/linha.geojson"></script>
+<script src="./layers/marcador.geojson"></script>
+<script src="./layers/poligono.geojson"></script>
 
 </head>
 <body>
@@ -39,22 +43,25 @@
 
       
       });
+      var poligono = L.geoJSON(area); 
+       poligono.addTo(map);
+
       var marcador = L.marker([1.22350399, -60.38507252]); 
       marcador.bindPopup("<b> nome do bairro: </b>"+ novaArray[0] + " <br/> <b> tipo: </b>" + nova[0]);
 
-      marcador.addTo(map);
+     // marcador.addTo(map);
 
       var m1 = L.marker([1.47440327, -60.88449575]);
       m1.bindPopup("<b> nome do bairro: </b>"+ novaArray[1] + " <br/> <b> tipo: </b>" + nova[1]);
-      m1.addTo(map);
+      //m1.addTo(map);
 
       var m2 = L.marker([1.71470000, -60.86780000]);
       m2.bindPopup("<b> nome do bairro: </b>"+ novaArray[2] + " <br/> <b> tipo: </b>" + nova[2]);
-      m2.addTo(map);
+     // m2.addTo(map);
 
       var m3 = L.marker([3.53990000, -59.88920000]);
       m3.bindPopup("<b> nome do bairro: </b>"+ novaArray[3] + " <br/> <b> tipo: </b>" + nova[3]);
-      m3.addTo(map);
+      //m3.addTo(map);
 
 
 
@@ -69,6 +76,7 @@
 
       });*/
 
+      
       var basemap = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
           });
           basemap.addTo(map);
