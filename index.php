@@ -29,6 +29,9 @@
     <div id='map'>i</div>
     <!--<div id='map1'></div>--> 
     <script>
+        console.log(rodovia1);
+        console.log(rodovia1.features[0].properties.administra);
+        console.log(rodovia1.features[1].properties.codtrechor);
       
       var novaArray = ["São joão", "Mecejana","Centro", "São Bento"];
       var nova = [ "zona 01", "Zona 02","Zona 03", "Zona 4"];
@@ -43,8 +46,23 @@
 
       
       });
-      var poligono = L.geoJSON(area); 
-       poligono.addTo(map);
+      var poligono = L.geoJSON(area, {
+      color: '#FFFF00',
+      weight: 2,
+      dashArray: '12 8 12',
+     }); 
+      // poligono.addTo(map);
+
+       var marcador = L.geoJSON(sedesMunic1, {
+      color: '#FFFF00',
+      weight: 2, });    
+       //marcador.addTo(map);
+
+       var linha  = L.geoJSON(rodovia1, {
+      color: '#FFFF00',
+      weight: 2,
+      }); 
+       linha.addTo(map);
 
       var marcador = L.marker([1.22350399, -60.38507252]); 
       marcador.bindPopup("<b> nome do bairro: </b>"+ novaArray[0] + " <br/> <b> tipo: </b>" + nova[0]);
